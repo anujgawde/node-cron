@@ -11,7 +11,12 @@ cron.schedule("*/3 * * * *", async () => {
 
     // Carry out the activities you want periodically:
     // In this case, I am using this cron job to keep my server alive which goes down with a few minutes of inactivity
-    const response = await axios.get("https://prime-backend.onrender.com/");
+    const primeBackendResponse = await axios.get(
+      "https://prime-backend.onrender.com/"
+    );
+    const nodeCronResponse = await axios.get(
+      "https://node-cron-5295.onrender.com/"
+    );
 
     // Another link will be called, which will be this application's link
   } catch (error) {
